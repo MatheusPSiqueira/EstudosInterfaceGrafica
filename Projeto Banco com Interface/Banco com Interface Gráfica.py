@@ -1,7 +1,6 @@
 from tkinter import *
 from conta1 import Conta1
 
-
 janela = Tk()
 janela.title('Banco')
 janela.geometry('500x500+400+100')
@@ -107,7 +106,8 @@ def inicio():
 inicio()
 
 def op_nao():
-    Label(janela_info, text='Tudo bem, até mais!!', font='Arial 15', background='Azure1').place(x=50, y=250)
+    Label(janela_info, text='Tudo bem, até mais!!', font='Arial 15', background='Azure1').place(x=50, y=260)
+
 
 def op_sim():
     global janela_op
@@ -126,6 +126,9 @@ def op_sim():
     bt_dep = Button(janela_op, text='Depósito', background='LightBlue1', command=deposito)
     bt_dep.place(x=100, y=90)
 
+    bt_sair = Button(janela_op, text='Encerrar', background='PaleTurquoise1', command=sair)
+    bt_sair.place(x=400, y=320)
+
 
 def func_saque():
 
@@ -143,13 +146,13 @@ def func_saque():
         lb_saldo.place(x=200, y=380)
 
     if saque == False:
-        Label(janela_op, text='Operação não realizada', background='Azure1', font='Arial 13').place(x=10, y=240)
-        Label(janela_op, text='Limite Insuficiente', background='Azure1', font='Arial 13').place(x=10, y=260)
-        Label(janela_op, text='Saldo: R$ ' + str(cliente.consulta_saldo()), background='Azure1', font='Arial 13').place(x=10, y=280)
+        Label(janela_op, text='Operação não realizada                                                                   ', background='Azure1', font='Arial 13').place(x=10, y=240)
+        Label(janela_op, text='Limite Insuficiente                                                                      ', background='Azure1', font='Arial 13').place(x=10, y=260)
+        Label(janela_op, text='Saldo: R$ ' + str(cliente.consulta_saldo())+'                     ', background='Azure1', font='Arial 13').place(x=10, y=280)
     else:
-        Label(janela_op, text='                                        ', background='Azure1', font='Arial 13').place(x=10, y=240)
-        Label(janela_op, text='                                        ', background='Azure1', font='Arial 13').place(x=10, y=260)
-        Label(janela_op, text='                                        ', background='Azure1', font='Arial 13').place(x=10, y=280)
+        Label(janela_op, text='                                                                                          ', background='Azure1', font='Arial 13').place(x=10, y=240)
+        Label(janela_op, text='                                                                                          ', background='Azure1', font='Arial 13').place(x=10, y=260)
+        Label(janela_op, text='                                                                                          ', background='Azure1', font='Arial 13').place(x=10, y=280)
         Label(janela_op, text='Foi sacado: R$ '+str(valor), background='Azure1', font='Arial 13', fg='red').place(x=10, y=240)
         lb_saldo['text'] = 'Saldo Atual: R$ '+str(cliente.consulta_saldo())+'                                        '
 
@@ -194,14 +197,14 @@ def func_dep():
         lb_saldo.place(x=200, y=380)
 
     if dep == False:
-        Label(janela_op, text='Operação não realizada', background='Azure1', font='Arial 13').place(x=10, y=240)
+        Label(janela_op, text='Operação não realizada                                   ', background='Azure1', font='Arial 13').place(x=10, y=240)
         Label(janela_op, text='Você não pode depositar um valor menor ou igual a R$ 0.0', background='Azure1', font='Arial 13').place(x=10, y=260)
         Label(janela_op, text='                                                 ', background='Azure1', font='Arial 13').place(x=10, y=280)
     else:
-        Label(janela_op, text='                                        ', background='Azure1', font='Arial 13').place(x=10, y=240)
-        Label(janela_op, text='                                        ', background='Azure1', font='Arial 13').place(x=10, y=260)
-        Label(janela_op, text='                                        ', background='Azure1', font='Arial 13').place(x=10, y=280)
-        Label(janela_op, text='Foi depositado: R$ ' + str(valor), background='Azure1', font='Arial 13', fg='Green').place(x=10, y=240)
+        Label(janela_op, text='                                                                                            ', background='Azure1', font='Arial 13').place(x=10, y=240)
+        Label(janela_op, text='                                                                                            ', background='Azure1', font='Arial 13').place(x=10, y=260)
+        Label(janela_op, text='                                                                                            ', background='Azure1', font='Arial 13').place(x=10, y=280)
+        Label(janela_op, text='Foi depositado: R$ ' + str(valor)+'                                                         ', background='Azure1', font='Arial 13', fg='Green').place(x=10, y=240)
         lb_saldo['text'] = 'Saldo Atual: R$ '+str(cliente.consulta_saldo())+'                                   '
 
 def deposito():
@@ -227,5 +230,8 @@ def deposito():
     bt_func_dep = Button(janela_op, text='Confirmar', background='lightblue1', command=func_dep)
     bt_func_dep.place(x=85, y=200)
 
+
+def sair():
+    janela_op.destroy()
 
 janela.mainloop()
