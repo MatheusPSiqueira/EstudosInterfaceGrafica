@@ -18,8 +18,8 @@ This project is being developed with the following technologies:
 
 # Gallery
 
-<img src="img/print 1.png"> <img align="right" src="img/print 2.png">
-<img src="img/print 3.png"> <img align="right" src="img/print 4.png">
+<img src="img/print 1.png"> <img src="img/print 2.png">
+<img src="img/print 3.png"> <img src="img/print 4.png">
 <img src="img/print 5.png">
 
 
@@ -45,6 +45,6 @@ Este projeto está sendo desenvolvido com as seguintes tecnologias:
 
 # Galeria
 
-<img src="img/print 1.png"> <img align="right" src="img/print 2.png">
-<img src="img/print 3.png"> <img align="right" src="img/print 4.png">
+<img src="img/print 1.png"> <img src="img/print 2.png">
+<img src="img/print 3.png"> <img src="img/print 4.png">
 <img src="img/print 5.png">
